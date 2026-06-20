@@ -1,0 +1,120 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* FUNDO */
+body {
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9, #e3f2fd);
+  color: #1f1f1f;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #0b5d1e, #1b8f3a);
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.brand-text h1 {
+  font-size: 28px;
+}
+
+.brand-text p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.brand-text span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* FORM */
+form {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* FIELDSETS */
+fieldset {
+  border: 2px solid #1b8f3a;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+legend {
+  color: #1b8f3a;
+  font-weight: bold;
+}
+
+/* INPUTS */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #1b8f3a;
+  outline: none;
+}
+
+/* BOTÕES */
+button {
+  background: #1b8f3a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0b5d1e;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  form {
+    margin: 15px;
+  }
+}
