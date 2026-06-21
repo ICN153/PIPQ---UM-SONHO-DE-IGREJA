@@ -1,49 +1,58 @@
-document.querySelector("form").addEventListener("submit", function (e) {
+const form = document.getElementById("formCadastro");
+const successScreen = document.getElementById("successScreen");
+const closeBtn = document.getElementById("closeSuccess");
+
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const nome = document.querySelector('input[name="nome"]').value;
-  const email = document.querySelector('input[name="email"]').value;
-  const telefone = document.querySelector('input[name="telefone"]').value;
-  const opiniao = document.querySelector('textarea[name="comentario"]').value;
+  try {
+    const nome = form.querySelector('input[name="nome"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const telefone = form.querySelector('input[name="telefone"]').value;
 
-  const mensagem = `*Novo Cadastro - PIPQ*
+    const opiniaoEl = form.querySelector('textarea[name="comentario"]');
+    const opiniao = opiniaoEl ? opiniaoEl.value : "";
 
-Nome: ${nome}
-Email: ${email}
-Telefone: ${telefone}
-Opinião: ${opiniao}`;
-
-  const numeroWhatsApp = "5521974866272";
-  const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-  const assunto = "Cadastro de Membro - PIPQ";
-
-  const corpoEmail = `Novo Cadastro - PIPQ
+    const mensagem = `*Novo Cadastro - PIPQ*
 
 Nome: ${nome}
 Email: ${email}
 Telefone: ${telefone}
 Opinião: ${opiniao}`;
 
-  const emailLink = `mailto:isaiascarlos91@outlook.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmail)}`;
+    const numeroWhatsApp = "5521974866272";
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
+    const assunto = "Cadastro de Membro - PIPQ";
 
-  window.open(urlWhatsApp, "_blank");
+    const corpoEmail = `Novo Cadastro - PIPQ
 
+Nome: ${nome}
+Email: ${email}
+Telefone: ${telefone}
+Opinião: ${opiniao}`;
 
-  setTimeout(() => {
-    window.location.href = emailLink;
-  }, 800);
+    const emailLink = `mailto:isaiascarlos91@outlook.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpoEmail)}`;
 
+    // 🔥 abre WhatsApp primeiro (mais importante)
+    window.open(urlWhatsApp, "_blank");
 
-  const successScreen = document.getElementById("successScreen");
-  successScreen.style.display = "flex";
+    // 🔥 depois email
+    setTimeout(() => {
+      window.location.href = emailLink;
+    }, 1000);
 
+    // sucesso
+    successScreen.style.display = "flex";
 
-  this.reset();
+    // limpar form
+    form.reset();
+  } catch (error) {
+    console.error("Erro no envio:", error);
+    alert("Erro ao enviar formulário. Veja o console (F12).");
+  }
 });
 
-
-document.getElementById("closeSuccess").addEventListener("click", function () {
-  document.getElementById("successScreen").style.display = "none";
+closeBtn.addEventListener("click", function () {
+  successScreen.style.display = "none";
 });
