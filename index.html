@@ -1,171 +1,258 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <!-- Primary Meta Tags -->
-<title>Projeto HARD CORE utilizando HTML, CSS  e JAVASCRIPT.</title>
-<meta name="title" content="Projeto HARD CORE utilizado HTML, CSS  e JAVASCRIPT." />
-<meta name="description" content="Projeto de estudo onde foi utilizado conceitos de CSS, responsivo, FlexBox, Eventos em JS e Semântica, entre outros." />
+  <!-- Primary Meta Tags -->
+  <title>PIPQ - Cadastro de Membros e Visitantes</title>
+  <meta name="title" content="PIPQ - Cadastro de Membros e Visitantes" />
+  <meta name="description" content="Cadastro oficial de membros e visitantes da Primeira Igreja Presbiteriana em Queimados. Sistema de integração e acompanhamento pastoral." />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://icn153.github.io/PIPQ---UM-SONHO-DE-IGREJA/" />
-<meta property="og:title" content="Cadastro de Membros." />
-<meta property="og:description" content="PIPQ - um sonho de igreja. Preencha o formulário para que igreja possa conhecer melhor" />
-<meta property="og:image" content="https://github.com/ICN153/PIPQ---UM-SONHO-DE-IGREJA/blob/main/img/logo%20pipq.jpeg?raw=true" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://icn153.github.io/PIPQ---UM-SONHO-DE-IGREJA/" />
+  <meta property="og:title" content="PIPQ - Cadastro de Membros" />
+  <meta property="og:description" content="Faça parte da nossa família na igreja. Cadastro de membros e visitantes." />
+  <meta property="og:image" content="https://github.com/ICN153/PIPQ---UM-SONHO-DE-IGREJA/blob/main/img/logo%20pipq.jpeg?raw=true" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://icn153.github.io/PIPQ---UM-SONHO-DE-IGREJA/" />
-<meta property="twitter:title" content="Cadastro de Membros." />
-<meta property="twitter:description" content="PIPQ - um sonho de igreja. Preencha o formulário para que igreja possa conhecer melhor" />
-<meta property="twitter:image" content="https://github.com/ICN153/PIPQ---UM-SONHO-DE-IGREJA/blob/main/img/logo%20pipq.jpeg?raw=true" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://icn153.github.io/PIPQ---UM-SONHO-DE-IGREJA/" />
+  <meta property="twitter:title" content="PIPQ - Cadastro de Membros" />
+  <meta property="twitter:description" content="Cadastro de membros e visitantes da igreja PIPQ." />
+  <meta property="twitter:image" content="https://github.com/ICN153/PIPQ---UM-SONHO-DE-IGREJA/blob/main/img/logo%20pipq.jpeg?raw=true" />
 
-<!-- Meta Tags Generated with https://metatags.io -->
-
-  <title>PIPQ - Cadastro de Membros</title>
-
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" href="./img/logo pipq.jpeg">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
 
-<header class="header">
-  <div class="brand">
-    <img src="img/logo pipq.jpeg" alt="PIPQ Logo" class="logo" />
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">
+      <img src="./img/logo pipq.jpeg" class="logo" alt="PIPQ Logo">
 
-    <div class="brand-text">
-      <h1>PIPQ</h1>
-      <p>Primeira Igreja Presbiteriana em Queimados</p>
-      <span>Cadastro de Membros e Visitantes</span>
+      <div class="brand-text">
+        <h1>PIPQ</h1>
+        <p>Primeira Igreja Presbiteriana em Queimados</p>
+        <span>Sistema de Cadastro de Membros e Visitantes</span>
+      </div>
     </div>
+  </header>
+
+  <!-- FORMULÁRIO -->
+  <form id="formCadastro">
+
+    <fieldset>
+      <legend>Boas-vindas</legend>
+      <p>
+        Este formulário tem como objetivo conhecer melhor você e sua família,
+        permitindo acompanhamento pastoral e integração na igreja.
+      </p>
+    </fieldset>
+
+    <!-- DADOS PESSOAIS -->
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+
+      <label>Nome completo</label>
+      <input type="text" name="nome" required>
+
+      <label>Data de nascimento</label>
+      <input type="date" name="nascimento">
+
+      <label>CPF</label>
+      <input type="text" name="cpf">
+
+      <label>RG</label>
+      <input type="text" name="rg">
+
+      <label>Estado civil</label>
+      <select name="estadoCivil">
+        <option>Solteiro(a)</option>
+        <option>Casado(a)</option>
+        <option>Divorciado(a)</option>
+        <option>Viúvo(a)</option>
+      </select>
+
+      <label>Profissão</label>
+      <input type="text" name="profissao">
+
+      <label>Escolaridade</label>
+      <select name="escolaridade">
+        <option>Fundamental</option>
+        <option>Médio</option>
+        <option>Superior</option>
+        <option>Pós-graduação</option>
+      </select>
+    </fieldset>
+
+    <!-- CONTATO -->
+    <fieldset>
+      <legend>Contato</legend>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Telefone</label>
+      <input type="tel" name="telefone">
+
+      <label>WhatsApp</label>
+      <input type="tel" name="whatsapp">
+    </fieldset>
+
+    <!-- ENDEREÇO -->
+    <fieldset>
+      <legend>Endereço</legend>
+
+      <label>CEP</label>
+      <input type="text" name="cep">
+
+      <label>Rua</label>
+      <input type="text" name="rua">
+
+      <label>Número</label>
+      <input type="text" name="numero">
+
+      <label>Bairro</label>
+      <input type="text" name="bairro">
+
+      <label>Cidade</label>
+      <input type="text" name="cidade">
+
+      <label>Estado</label>
+      <input type="text" name="estado">
+    </fieldset>
+
+    <!-- FAMÍLIA -->
+    <fieldset>
+      <legend>Família</legend>
+
+      <label>Cônjuge</label>
+      <input type="text" name="conjuge">
+
+      <label>Possui filhos?</label>
+      <select name="filhos">
+        <option>Sim</option>
+        <option>Não</option>
+      </select>
+
+      <label>Quantidade de filhos</label>
+      <input type="number" name="qtdFilhos">
+
+      <label>Nomes dos filhos</label>
+      <textarea name="nomesFilhos"></textarea>
+    </fieldset>
+
+    <!-- VIDA CRISTÃ -->
+    <fieldset>
+      <legend>Vida Cristã</legend>
+
+      <label>Membro da igreja?</label>
+      <select name="membro">
+        <option>Sim</option>
+        <option>Não</option>
+        <option>Visitante</option>
+      </select>
+
+      <label>Data de conversão</label>
+      <input type="date" name="conversao">
+
+      <label>Batizado?</label>
+      <select name="batizado">
+        <option>Sim</option>
+        <option>Não</option>
+      </select>
+
+      <label>Igreja anterior</label>
+      <input type="text" name="igrejaAnterior">
+    </fieldset>
+
+    <!-- MINISTÉRIOS -->
+    <fieldset>
+      <legend>Ministérios</legend>
+
+      <label><input type="checkbox" name="ministerio" value="Louvor"> Louvor</label>
+      <label><input type="checkbox" name="ministerio" value="Mídia"> Mídia</label>
+      <label><input type="checkbox" name="ministerio" value="Intercessão"> Intercessão</label>
+      <label><input type="checkbox" name="ministerio" value="Recepção"> Recepção</label>
+      <label><input type="checkbox" name="ministerio" value="Evangelismo"> Evangelismo</label>
+      <label><input type="checkbox" name="ministerio" value="Infantil"> Infantil</label>
+      <label><input type="checkbox" name="ministerio" value="Jovens"> Jovens</label>
+      <label><input type="checkbox" name="ministerio" value="Casais"> Casais</label>
+    </fieldset>
+
+    <!-- DONS -->
+    <fieldset>
+      <legend>Dons e Talentos</legend>
+      <textarea name="dons" placeholder="Como você pode servir na igreja?"></textarea>
+    </fieldset>
+
+    <!-- ORAÇÃO -->
+    <fieldset>
+      <legend>Pedido de Oração</legend>
+      <textarea name="oracao"></textarea>
+    </fieldset>
+
+    <!-- TESTEMUNHO -->
+    <fieldset>
+      <legend>Testemunho</legend>
+      <textarea name="testemunho"></textarea>
+    </fieldset>
+
+    <!-- EMERGÊNCIA -->
+    <fieldset>
+      <legend>Contato de Emergência</legend>
+
+      <label>Nome</label>
+      <input type="text" name="emergenciaNome">
+
+      <label>Parentesco</label>
+      <input type="text" name="parentesco">
+
+      <label>Telefone</label>
+      <input type="tel" name="emergenciaTelefone">
+    </fieldset>
+
+    <!-- AUTORIZAÇÃO -->
+    <fieldset>
+      <legend>Autorizações</legend>
+
+      <label>
+        <input type="checkbox" required>
+        Autorizo uso dos meus dados para cadastro da igreja
+      </label>
+
+      <label>
+        <input type="checkbox">
+        Desejo receber comunicações da igreja
+      </label>
+
+      <label>
+        <input type="checkbox">
+        Autorizo contato via WhatsApp
+      </label>
+    </fieldset>
+
+    <!-- BOTÕES -->
+    <button type="submit">Enviar Cadastro</button>
+    <button type="reset">Limpar</button>
+
+  </form>
+
+  <div class="success-screen" id="successScreen">
+  <div class="success-box">
+    <h2>✔ Cadastro enviado com sucesso!</h2>
+    <p>Obrigado por preencher o formulário da PIPQ.</p>
+    <button id="closeSuccess">Fechar</button>
   </div>
-</header>
+</div>
 
-<section>
-
-<form method="post" enctype="multipart/form-data">
-
-  <!-- DADOS PESSOAIS -->
-  <fieldset>
-    <legend>Dados Pessoais</legend>
-
-    <label>Nome completo</label>
-    <input type="text" name="nome" required />
-
-    <label>Data de nascimento</label>
-    <input type="date" name="nascimento" required />
-
-    <label>Email</label>
-    <input type="email" name="email" required />
-
-    <label>Telefone</label>
-    <input type="tel" name="telefone" placeholder="(21) 99999-9999" />
-
-    <label>Foto</label>
-    <input type="file" accept="image/*" />
-  </fieldset>
-
-  <!-- ENDEREÇO -->
-  <fieldset>
-    <legend>Endereço</legend>
-
-    <label>Estado</label>
-    <select name="estado">
-      <option>Selecione...</option>
-      <option>Rio de Janeiro</option>
-      <option>São Paulo</option>
-      <option>Minas Gerais</option>
-    </select>
-
-    <label>Cidade</label>
-    <input type="text" name="cidade" />
-
-    <label>Endereço</label>
-    <input type="text" name="endereco" />
-  </fieldset>
-
-  <!-- PERFIL -->
-  <fieldset>
-    <legend>Perfil</legend>
-
-    <p>Gênero</p>
-    <label><input type="radio" name="genero" value="Feminino"> Feminino</label>
-    <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
-    <label><input type="radio" name="genero" value="Outro"> Outro</label>
-
-    <label>Estado civil</label>
-    <select name="estadoCivil">
-      <option>Solteiro</option>
-      <option>Casado</option>
-      <option>Divorciado</option>
-    </select>
-  </fieldset>
-
-  <!-- VIDA NA IGREJA -->
-  <fieldset>
-    <legend>Vida na Igreja</legend>
-
-    <label>É membro?</label>
-    <select name="membro">
-      <option>Sim</option>
-      <option>Não</option>
-      <option>Visitante</option>
-    </select>
-
-    <label>Batizado?</label>
-    <select name="batizado">
-      <option>Sim</option>
-      <option>Não</option>
-    </select>
-
-    <label>Ministério</label>
-    <input type="text" name="ministerio" placeholder="Ex: Louvor, Jovens..." />
-
-    <label>Pedido de oração</label>
-    <textarea name="oracao"></textarea>
-  </fieldset>
-
-  <!-- OPINIÃO -->
-  <fieldset>
-    <legend>Opinião</legend>
-
-    <p>Avaliação da igreja</p>
-
-    <label><input type="radio" name="opiniao" value="otimo"> Ótimo</label>
-    <label><input type="radio" name="opiniao" value="bom"> Bom</label>
-    <label><input type="radio" name="opiniao" value="regular"> Regular</label>
-    <label><input type="radio" name="opiniao" value="ruim"> Ruim</label>
-
-    <label>Comentário</label>
-    <textarea name="comentario"></textarea>
-  </fieldset>
-
-  <!-- CONFIRMAÇÃO -->
-  <fieldset>
-    <legend>Confirmação</legend>
-
-    <label>
-      <input type="checkbox" required />
-      Autorizo o uso dos meus dados para cadastro da igreja
-    </label>
-
-    <label>
-      <input type="checkbox" />
-      Desejo receber informações por email
-    </label>
-  </fieldset>
-
-  <button type="submit">Enviar</button>
-  <button type="reset">Limpar</button>
-
-</form>
-
-</section>
-
-<script src="./js/script.js"></script>
+  <script src="./js/script.js"></script>
 
 </body>
+
 </html>
